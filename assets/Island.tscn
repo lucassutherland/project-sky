@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnm6y65g1an2"]
+
+[ext_resource type="PackedScene" uid="uid://cng8jvvv4rp8y" path="res://Islands/Island1.glb" id="1_g1ytw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Island1" parent="." instance=ExtResource("1_g1ytw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.635, 94.76, -27.3542)

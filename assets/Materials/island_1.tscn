@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ro0vxlk2sir7"]
+
+[ext_resource type="PackedScene" uid="uid://cng8jvvv4rp8y" path="res://Islands/Island1.glb" id="1_5bgdg"]
+[ext_resource type="Material" uid="uid://qiy8unj5pesp" path="res://assets/Materials/Rock.tres" id="2_mjchv"]
+
+[node name="Island1" instance=ExtResource("1_5bgdg")]
+
+[node name="Island 1" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07072, 0.0602813, 0.547412)
+material_override = ExtResource("2_mjchv")

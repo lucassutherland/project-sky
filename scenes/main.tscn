@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://qon0l27d7a64"]
+[gd_scene load_steps=11 format=3 uid="uid://qon0l27d7a64"]
 
 [ext_resource type="Material" uid="uid://cy2ecgv2oxbx6" path="res://assets/ground.tres" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ro0vxlk2sir7" path="res://assets/Materials/island_1.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bsxggcfnmtaol" path="res://scenes/player.tscn" id="2_sugp2"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_0xm2m"]
@@ -32,6 +33,9 @@ shape = SubResource("WorldBoundaryShape3D_0xm2m")
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 material_override = ExtResource("1_0wfyh")
 mesh = SubResource("PlaneMesh_h2yge")
+
+[node name="Island1" parent="Ground" instance=ExtResource("2_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15988, 5.69999, -1.36356)
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0921158, 1.19441, -0.13849)

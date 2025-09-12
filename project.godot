@@ -15,6 +15,10 @@ run/main_scene="uid://qon0l27d7a64"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 left={
