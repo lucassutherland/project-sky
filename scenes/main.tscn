@@ -1,21 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://qon0l27d7a64"]
+[gd_scene load_steps=11 format=3 uid="uid://qon0l27d7a64"]
 
-[ext_resource type="PackedScene" uid="uid://ro0vxlk2sir7" path="res://assets/Materials/island_1.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cng8jvvv4rp8y" path="res://assets/Islands/Island1.glb" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bsxggcfnmtaol" path="res://scenes/player.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://3nlpai2njl6o" path="res://assets/Materials/island_2.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bwdmoeps8o0jm" path="res://assets/Materials/island_3.tscn" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://cpa0juv1gs2md" path="res://assets/skybox panoramas/bright_day.exr" id="2_tefeu"]
+[ext_resource type="Material" uid="uid://qiy8unj5pesp" path="res://assets/Materials/Rock.tres" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dwy3v3dvgsrew" path="res://assets/Islands/Island2.glb" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b67mmot8hjjtn" path="res://assets/Islands/Island3.glb" id="5_tbgi4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
-ground_bottom_color = Color(0.580392, 0.662745, 0.737255, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o6xl0"]
+panorama = ExtResource("2_tefeu")
+energy_multiplier = 0.5
 
 [sub_resource type="Sky" id="Sky_h2yge"]
-sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+sky_material = SubResource("PanoramaSkyMaterial_o6xl0")
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
 sky = SubResource("Sky_h2yge")
 ambient_light_source = 3
 ambient_light_energy = 2.55
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tbgi4"]
 
 [node name="Main" type="Node3D"]
 
@@ -38,15 +43,26 @@ directional_shadow_max_distance = 8192.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0xm2m")
+camera_attributes = SubResource("CameraAttributesPractical_tbgi4")
 
-[node name="Island1" parent="." instance=ExtResource("2_jyhfs")]
-transform = Transform3D(2.485, 0, 0, 0, 2.485, 0, 0, 0, 2.485, 0.959259, -6.4212, -0.470924)
+[node name="Island1" parent="." instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.514989, -2.43522, 0.307968)
 
-[node name="Island2" parent="." instance=ExtResource("3_jyhfs")]
-transform = Transform3D(2.485, 0, 0, 0, 2.485, 0, 0, 0, 2.485, -3.70954, -4.13751, -10.978)
+[node name="Island 1" parent="Island1" index="0"]
+material_override = ExtResource("3_sugp2")
 
-[node name="Island3" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(2.485, 0, 0, 0, 2.485, 0, 0, 0, 2.485, -14.0016, -1.96636, -2.71337)
+[node name="Island2" parent="." instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81394, 1.5974, -6.36743)
 
-[node name="Island4" parent="." instance=ExtResource("4_tbgi4")]
-transform = Transform3D(2.90745, 0, 0, 0, 3.54112, 0, 0, 0, 2.74592, -7.02667, -8.30255, -4.80954)
+[node name="Island 2" parent="Island2" index="0"]
+material_override = ExtResource("3_sugp2")
+
+[node name="Island3" parent="." instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.34307, 0, -2.08288)
+
+[node name="Island 3" parent="Island3" index="0"]
+material_override = ExtResource("3_sugp2")
+
+[editable path="Island1"]
+[editable path="Island2"]
+[editable path="Island3"]

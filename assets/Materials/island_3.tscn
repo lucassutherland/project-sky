@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwdmoeps8o0jm"]
 
-[ext_resource type="PackedScene" uid="uid://b67mmot8hjjtn" path="res://Islands/Island3.glb" id="1_vr7no"]
+[ext_resource type="PackedScene" uid="uid://b67mmot8hjjtn" path="res://assets/Islands/Island3.glb" id="1_vr7no"]
 [ext_resource type="Material" uid="uid://qiy8unj5pesp" path="res://assets/Materials/Rock.tres" id="2_aadl5"]
 
 [node name="Island3" instance=ExtResource("1_vr7no")]
