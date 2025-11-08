@@ -71,9 +71,9 @@ func _physics_process(delta: float) -> void:
 	_smooth_accel = lerp(_smooth_accel, raw_accel, clamp(accel_smooth, 0.0, 1.0))
 
 	# localize to player's yaw
-	var to_local = transform.basis.inverse()
-	var v_local = to_local * velocity
-	var a_local = to_local * _smooth_accel
+	var localised = transform.basis.inverse()
+	var v_local = localised * velocity
+	var a_local = localised * _smooth_accel
 
 	# forward is -Z in Godot
 	var forward_speed = -v_local.z
